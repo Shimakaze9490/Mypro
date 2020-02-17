@@ -1,0 +1,35 @@
+<!-- 
+    解决ie浏览器 css shack.过期了，现在不再使用
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            background-color: green;
+        }
+    </style>
+    <!--[if IE]-->
+    <style type="text/css">
+        body {
+            background-color: red;
+        }
+    </style>
+    <!--[endif]-->
+</head>
+
+<body>
+    <!--[if IE]>
+        	我们的网站不支持 你的IE浏览器，请下载一个谷歌或火狐浏览器<a href="http://www.baidu.com">下载</a>
+        <![endif]-->
+    <!--[if ! IE 8]>
+        	<br/>
+	             这段文字在非IE8浏览器显示
+	     <![endif]-->
+</body>
+
+</html>
