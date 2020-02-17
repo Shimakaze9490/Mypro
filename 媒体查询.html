@@ -1,0 +1,43 @@
+<!-- 
+    媒体查询，主要用于移动端，和不同屏幕大小的显示
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css前缀，webkit代表safari，chrome。moz代表firefox。o代表opera。ms代表ie */
+        #box:hover {
+            -webkit-transform: rotateY(30deg);
+            transform: rotate(30deg);
+
+            /* -o-transform: rotate(30deg);
+            -moz-transform: rotate(30deg);
+            -ms-transform: rotate(30deg); */
+        }
+
+        #box {
+            width: 300px;
+            height: 300px;
+            -webkit-background: red;
+            background: green
+        }
+
+        @media only screen and (min-width:100px) and (max-width:900px) {
+            #box {
+                background-color: black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+</body>
+
+</html>
