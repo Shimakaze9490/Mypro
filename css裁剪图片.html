@@ -1,0 +1,46 @@
+<!-- 
+    主要内容：利用css背景定位来“裁剪图片”，减少访问次数
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #box {
+            box-sizing: border-box;
+            width: 600px;
+            height: 100px;
+            padding-top: 40px;
+            padding-left: 10px;
+            border: solid 1px #ccc;
+        }
+
+        #box>.imgs:nth-child(1) {
+            width: 12px;
+            height: 10px;
+            background: url(img/Header.png) no-repeat -120px -259px;
+            float: left;
+            /* color: red; */
+        }
+
+        #box>.imgs:nth-child(2) {
+            /* color: green; */
+            width: 60px;
+            height: 48px;
+            background: url(img/Header.png) no-repeat -90px -20px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="imgs"></div>
+        <div class="imgs"></div>
+    </div>
+</body>
+
+</html>
