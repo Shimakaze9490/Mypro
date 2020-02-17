@@ -1,0 +1,161 @@
+<!-- 
+    主要内容：二级导航
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #nav {
+            width: 200px;
+            border: solid 1px #ccc;
+            margin: 50px auto;
+        }
+
+        #nav>ul,
+        .submenu>ul {
+            list-style: none;
+        }
+
+        #nav>ul>li {
+            box-sizing: border-box;
+            height: 36px;
+            line-height: 36px;
+            border-bottom: dotted 1px #ccc;
+            text-align: center;
+            /* 相对容器定位 */
+            position: relative;
+        }
+
+        #nav>ul>li>span {
+            width: 0px;
+            height: 0px;
+            border-width: 10px;
+            border-style: solid;
+            display: inline-block;
+            /* 提前隐藏 */
+            display: none;
+        }
+
+        /* css画出三角形 */
+        .left {
+            border-color: transparent transparent transparent red;
+            position: absolute;
+            left: 2px;
+            top: 8px;
+        }
+
+        .right {
+            border-color: transparent red transparent transparent;
+            position: absolute;
+            right: 2px;
+            top: 8px;
+        }
+
+        #nav>ul>li>a,
+        .submenu>ul>li>a {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            color: goldenrod;
+        }
+
+        /* 鼠标悬停在li标签上，span标签显示 */
+        #nav>ul>li:hover span {
+            display: block;
+        }
+
+        /* 固定二级标签位置 */
+        .submenu {
+            width: 200px;
+            /* min-height: 200px; */
+            /* border: solid 1px gainsboro; */
+            position: absolute;
+            top: 0px;
+            right: -200px;
+            display: none;
+        }
+
+        .submenu>ul>li {
+            box-sizing: border-box;
+            height: 36px;
+            line-height: 36px;
+            border: dotted 1px #ccc;
+        }
+
+        #nav>ul>li:hover .submenu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <ul>
+            <!-- 一级 -->
+            <li>
+                <span class="left"></span>
+                <a href="">关于我们</a>
+                <span class="right"></span>
+                <div class="submenu">
+                    <ul>
+                        <li><a href="#">关于我们1</a></li>
+                        <li><a href="#">关于我们2</a></li>
+                        <li><a href="#">关于我们3</a></li>
+                        <li><a href="#">关于我们4</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <span class="left"></span>
+                <a href="">发展历程</a>
+                <span class="right"></span>
+                <div class="submenu">
+                    <ul>
+                        <li><a href="#">发展历程1</a></li>
+                        <li><a href="#">发展历程2</a></li>
+                        <li><a href="#">发展历程3</a></li>
+                        <li><a href="#">发展历程4</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <span class="left"></span>
+                <a href="">联系我们</a>
+                <span class="right"></span>
+                <div class="submenu">
+                    <ul>
+                        <li><a href="#">联系我们1</a></li>
+                        <li><a href="#">联系我们2</a></li>
+                        <li><a href="#">联系我们3</a></li>
+                        <li><a href="#">联系我们4</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <span class="left"></span>
+                <a href="">招聘人才</a>
+                <span class="right"></span>
+                <div class="submenu">
+                    <ul>
+                        <li><a href="#">招聘人才1</a></li>
+                        <li><a href="#">招聘人才2</a></li>
+                        <li><a href="#">招聘人才3</a></li>
+                        <li><a href="#">招聘人才4</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
