@@ -7,7 +7,17 @@
     <title>表格</title>
     <style type="text/css">
         table {
+            /* 表格的边框合并 */
             border-collapse: collapse;
+        }
+
+        table td {
+            border: solid 1px red;
+            width: 60px;
+            /* height: 40px; */
+            padding: 10px;
+            text-align: center;
+            color: #AAA;
         }
     </style>
 </head>
@@ -16,22 +26,21 @@
     <script type="text/javascript">
         // 注意：这是早期拼接标签的做法，在es6里面，用“标签模板” <li>${ name === "Jon" ? "is Jon" : "Not Jon" }</li>
         function tableT(row, clos) {
-            document.write("<talbe>");
+            document.write("<table>");
             for (var i = 0; i < row; i++) {
                 // 生成行
                 document.write("<tr>");
                 for (var j = 0; j < clos; j++) {
                     // 生成格
-                    document.write("<td></td>");
+                    document.write("<td>" + i + "-" + j + "</td>");
 
                 }
                 document.write("</tr>");
             };
             document.write("</table>");
         }
-        // var r = Number(window.prompt("表格的行数:", "12"));
-        // var c = Number(window.prompt("表格的列数:", "16"));
-
+        var r = Number(window.prompt("表格的行数:", "7"));
+        var c = Number(window.prompt("表格的列数:", "8"));
         tableT(r, c);
     </script>
 
