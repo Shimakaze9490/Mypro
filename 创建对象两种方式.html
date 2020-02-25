@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建对象</title>
+</head>
+
+<body>
+    <p id="p1">1</p>
+    <p id="p2">2</p>
+    <p id="p3">3</p>
+    <!-- 注意熟练使用document对象，属性和方法 -->
+    <script type="text/javascript">
+        // 创建对象四种方法： 构造函数，字面量，工厂函数，自定义构造函数
+        var zhangSan = new Object(); //一切对象，的父级对象（类
+        zhangSan.name = "张三";
+        zhangSan.sex = true;
+        zhangSan.age = 20;
+        zhangSan.showInfo = function (text) {
+            // 注意：this 指当前对象
+            return "我是" + this.name + "，性别为" + (this.sex ? "男" : "女") + "，今年" +
+                this.age + "岁。" + (text == undefined ? "" : text);
+        };
+
+        // 注意： innerHtml,innerText 不是方法函数，是赋值
+        var t = zhangSan.showInfo("大家友好相处吧！");
+        var t2 = zhangSan.showInfo("我们明天见！");
+
+        document.getElementById("p1").innerText = t;
+        document.getElementById("p2").innerText = t2;
+
+
+        // 第二种创建对象方法：用 字面量
+        var wangWu = {
+            name: "王五",
+            sex: true,
+            age: 33,
+            showInfo: function (text) {
+                return "我是" + this.name + "，性别为" + (this.sex ? "男" : "女") + "，今年" +
+                    this.age + "岁。" + (text == undefined ? "" : text);
+            }
+        };
+        var t3 = wangWu.showInfo("我也是广州人。");
+        document.getElementById("p3").innerText = t3;
+    </script>
+</body>
+
+</html>
